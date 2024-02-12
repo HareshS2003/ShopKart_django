@@ -37,7 +37,7 @@
                 <td></td>
                 <td></td>
                 <td><b>Total Amount</b></td>
-                <td>0</td>
+                <td id="net">0</td>
                 <td></td>
             </tr>
         </table>
@@ -45,4 +45,13 @@
       </div>
       </div>
   </section>
+  <script>
+    const nodes = document.querySelectorAll('.amt');
+    const arr = Array.from(nodes);
+    const res = arr.reduce((acc, curr) => {
+     return acc += Number(curr.textContent)
+    }, 0);
+    document.getElementById("net").innerHTML="Rs : "+res;
+
+  </script>
 {% endblock contents %}
